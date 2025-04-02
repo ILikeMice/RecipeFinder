@@ -15,3 +15,6 @@ Requirements:
 Deadline: 7 days from the start date.
 */
 
+document.getElementById("search").addEventListener("input", function() {
+    
+})
