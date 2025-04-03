@@ -11,6 +11,8 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
+    
+    font-family: "Quicksand", sans-serif;
 
     overflow-x: hidden;
 }
@@ -20,7 +22,6 @@ html, body {
     height: 70px;
 
     background-color: #ededed;
-    font-family: "Quicksand", sans-serif;
 
     display: flex;
     align-items: center;
@@ -33,15 +34,12 @@ html, body {
     padding-left: 20px;
 }
 
-.maindiv {
+.ingredientselectdiv {
     height: fit-content;
-    width: 70%;
+    width: 100%;
     
     background-color: transparent;
 
-    margin: auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
 
     border-radius: 30px;
     border: 2px solid #ccc;
@@ -50,6 +48,18 @@ html, body {
     flex-direction: column;
 
     overflow: hidden;
+}
+
+.maindiv {
+    width: 70%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;    
 }
 
 ::-webkit-scrollbar{
@@ -80,15 +90,72 @@ html, body {
     padding-left: 30px;
 }
 
-#searchbtn {
+#searchbtn, #recipebtn {
     height: 100%;
-    width: 90px;
+    width: 70px;
 
-    border: none;   
-    border-left: 1px solid white; 
+    box-sizing: border-box; /* Include padding and borders in width calculation */
+
+    color: black;
+    border: none;
+    border-left: 1px solid white;
+
+    flex-shrink: 0; /* Prevent buttons from shrinking in a flex container */
 }
 
-#searchbtn:hover {
+
+#recipebtn {
+    border-top: 1px solid white;
+}
+
+#searchbtn:hover, #recipebtn:hover {
+    cursor: pointer;
+    background-color: #e0e0e0;
+}
+
+.ingredientdiv ul{
+    height: 60%;
+    width: calc(100% - 70px);
+
+    padding: 20px;
+    padding-right: 0px;
+    
+
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+    gap: 15px 20px;
+
+    margin: 0;
+}
+
+.ingredientdiv {
+    width: 100%;
+    height: 90px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.ingredient {
+    width: fit-content;
+    height: 40px;
+
+    padding: 5px;
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+    border-radius: 15px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+}
+
+.ingredient:hover {
     cursor: pointer;
     background-color: #e0e0e0;
 }
