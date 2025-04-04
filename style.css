@@ -59,7 +59,7 @@ html, body {
 }
 
 .maindiv {
-    width: 70%;
+    width: 90%;
     height: fit-content;
 
     display: flex;
@@ -183,6 +183,9 @@ html, body {
     border: 2px solid #ccc;
 
     overflow: hidden;
+    overflow-y: scroll;
+
+    padding-bottom: 10px;
 }
 
 .recipe {
@@ -196,14 +199,14 @@ html, body {
 
     box-sizing: border-box;
 
-    max-height: 170px;
-
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-auto-flow: row;
     column-gap: 5px;
 
     align-items: center;
+
+    margin-bottom: 10px;
 }
 
 .recipe img {
@@ -221,6 +224,8 @@ html, body {
 
     padding: 7.5px;
     box-sizing: border-box;
+
+    height: fit-content;
 }
 
 .viewbtn {
@@ -244,4 +249,17 @@ html, body {
 .recipetitle {
     font-size: large;
     font-weight: bold;
+}
+
+
+@media (max-width: 390px) {
+    .maindiv {
+        width: 100%;
+    }
+}
+
+@media (min-width: 500px) {
+    .maindiv {
+        width: 70%;
+    }
 }

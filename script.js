@@ -1,20 +1,40 @@
-/*
-Task: Create a Responsive Recipe Search Web Application
+function adjustRecipeHeight() { // Function to make the recipe image and button the same height as the text field bc css couldnt do it
+    let recipes = document.querySelectorAll('.recipe');
 
-Objective: Design and develop a responsive web application where users can search for recipes based on ingredients they have at home. The focus should be on creating a clean, user-friendly interface with interactive elements.
+    recipes.forEach(recipe => {
+        let recipetxt = recipe.querySelector('.recipetxt');
+        let recipetxtHeight = recipetxt.offsetHeight;
 
-Requirements:
-1. Implement a search feature that allows users to input multiple ingredients and returns relevant recipes from an open recipe API (such as Spoonacular API).
-2. Display the search results in a grid format, showing recipe images, names, and brief descriptions.
-3. Include a detailed view for each recipe that provides a list of ingredients, preparation steps, and cooking time.
-4. Make the application responsive and ensure it works seamlessly on both desktop and mobile devices.
-5. Include a bookmark feature allowing users to save their favorite recipes for easy access later.
-6. Ensure cross-browser compatibility and implement basic SEO practices.
-7. Use clean and maintainable code with comments to explain your logic.
+        recipe.style.height = `${recipetxtHeight}px`;
 
-Deadline: 7 days from the start date.
-*/
+        let img = recipe.querySelector('img');
+        let viewbtn = recipe.querySelector('.viewbtn');
 
-document.getElementById("search").addEventListener("input", function() {
-    
-})
+        if (img) img.style.height = `${recipetxtHeight}px`;
+        if (viewbtn) viewbtn.style.height = `${recipetxtHeight}px`;
+    });
+}
+
+window.addEventListener('load', adjustRecipeHeight);
+window.addEventListener('resize', adjustRecipeHeight);
+
+async function completeIngredient() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let url = `https://api.spoonacular.com/food/ingredients/autocomplete?query=${input}&number=5&apiKey=367f065fb39d414ebfedb65c1074c83b`;
+
+    try {
+        const res = await fetch(url);
+
+        if (!res.ok) {
+            alert("Error fetching data: " + res.statusText);
+            return;
+        }
+
+        let json = await res.json();
+        let results = json.map(item => item.name);
+        console.log(results);
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred while fetching data.");
+    }
+}
