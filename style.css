@@ -175,10 +175,73 @@ html, body {
 .recipesdiv {
     width: 100%;
 
-    min-height: 120px;
+    height: fit-content;
 
     margin-top: 30px;
 
     border-radius: 30px;
     border: 2px solid #ccc;
+
+    overflow: hidden;
+}
+
+.recipe {
+    background-color: transparent;
+
+    width: 100%;
+    height: min-content;
+
+    padding: 10px;
+
+
+    box-sizing: border-box;
+
+    max-height: 170px;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-auto-flow: row;
+    column-gap: 5px;
+
+    align-items: center;
+}
+
+.recipe img {
+    max-height: 60px;
+
+    border-radius: 15px;
+}
+
+.recipetxt {
+    display: flex;
+    flex-direction: column;
+    background-color: #ededed;
+
+    border-radius: 15px;
+
+    padding: 7.5px;
+    box-sizing: border-box;
+}
+
+.viewbtn {
+    border: none;
+    border-radius: 15px;
+
+    background-color: #ededed;
+
+    height: 100%;
+}
+
+.viewbtn:hover {
+    background-color: #e0e0e0;
+}
+
+.recipedesc {
+    font-size: smaller;
+    color: rgba(0, 0, 0, 0.685);
+}
+
+.recipetitle {
+    font-size: large;
+    font-weight: bold;
 }
