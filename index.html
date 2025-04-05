@@ -10,51 +10,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+   
 </head>
 <body>
     <div class="topbar">
         <span class="sitename">RecipeFinder™</span>
     </div>
     <div class="maindiv">
+        <div class="dropdown">
+            <div class="dropcontent"></div>
+        </div>
         <div class="ingredientselectdiv">
             
             <div class="searchdiv">
                 <input type="text" id="search" placeholder="Search Ingedients...">
-                <div class="dropdown">
-                    <div class="dropcontent">
-                        
-                    </div>
-                </div>
-                <button id="searchbtn">Add</button>
             </div>
+            
             <div class="ingredientdiv">
-                <ul>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-                    <div class="ingredient">Chicken</div>
-
-                </ul>
-                <button id="recipebtn">Find Recipes!</button>
+                <ul></ul>
+                <button id="recipebtn" onclick="findRecipes();adjustRecipeHeight()">Find Recipes!</button>
             </div>
         </div>
         <div class="recipesdiv">
@@ -68,5 +42,9 @@
             </div>
         </div>
     </div>
+    <div class="viewdiv">
+        
+    </div>
 </body>
+<script src="script.js"></script>
 </html>
