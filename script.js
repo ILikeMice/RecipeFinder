@@ -73,12 +73,13 @@ window.addEventListener('click', function(event) { // show/hide dropdown on focu
 });
 
 async function findRecipes() { // Main recipe search function
+    ingredients = [];
     for (let i = 0; i < document.querySelector(".ingredientdiv ul").children.length; i++) {
         ingredients.push(document.querySelector(".ingredientdiv ul").children[i].innerHTML);
     }
     console.log(ingredients);
 
-    let url = "https://api.spoonacular.com/recipes/complexSearch?includeIngredients=" + ingredients.join(",") + "&number=5&apiKey=367f065fb39d414ebfedb65c1074c83b&addRecipeInformation=true";
+    let url = "https://api.spoonacular.com/recipes/complexSearch?includeIngredients=" + ingredients.join(",") + "&number=5&apiKey=367f065fb39d414ebfedb65c1074c83b&addRecipeInformation=true&fillIngredients=true";
 
     try {
         const response = await fetch(url);
@@ -120,7 +121,7 @@ async function findRecipes() { // Main recipe search function
             viewbtn.className = "viewbtn";
             viewbtn.textContent = "View";
             viewbtn.addEventListener("click", () => {
-                window.open(`https://spoonacular.com/recipes/${recipe.title}-${recipe.id}`, "_blank");
+                viewRecipe(recipe.title)
             });
 
             recipediv.appendChild(img);
@@ -140,3 +141,9 @@ async function findRecipes() { // Main recipe search function
 setInterval(() => { // Check eevry 5sec incase a function fails once
     adjustRecipeHeight();
 }, 5000);
+
+async function viewRecipe(name) {
+    document.querySelector(".viewparent").style.display = "block";
+
+
+}

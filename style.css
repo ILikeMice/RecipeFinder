@@ -287,18 +287,75 @@ html, body {
 }
 
 
-.viewdiv {
-    width: 0%;
-    aspect-ratio: 3/4;
+.viewparent {
     position: absolute;
 
-    background-color: black;
-    
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    top: 0;
 
+}
+
+.viewdiv {
+    max-width: 48rem;
+    max-height: calc(100vh - 100px);
     border-radius: 30px;
+    
+    padding-bottom: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    border: 2px solid #ccc;
+    overflow: visible;
+    z-index: 9999;
+
+    margin: auto;
+    margin-top: 70px;
+
+    overflow: hidden;
+
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.viewimg div {
+    width: 100%;
+    height: 60px;
+    background-color: #f0f0f0;
+    padding: 15px;
+    padding-bottom: 0px;
+    padding-top: 0;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+
+}
+
+.viewdesc {
+    width: 100%;
+    height: calc(100% - 60px);
+    
+    margin: 15px;
+
+    white-space: pre-wrap;
+
+
+}
+
+.viewclose {
+    font-size: x-large;
+    text-align: right;
+
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+}
+
+.viewclose:hover {
+    cursor: pointer;
+    color: #f00;
 }
 
 @media (max-width: 390px) {
