@@ -221,3 +221,12 @@ function likeRecpie(id) { // "favourite" recipe
     document.getElementById(id).querySelector(".viewbtn img").src = "https://icons.hackclub.com/api/icons/black/like-fill";
     console.log("Recipe liked");
 }
+
+window.addEventListener("load", () => {
+    if (localStorage.getItem("liked") == null) {
+        localStorage.setItem("liked", JSON.stringify([]));
+    }
+    if (localStorage.getItem("recipes") == null) {
+        localStorage.setItem("recipes", JSON.stringify({}));
+    }
+})
