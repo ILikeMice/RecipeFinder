@@ -192,7 +192,7 @@ function viewRecipe(id) {
     document.querySelector(".viewdesc").innerHTML = ingredients + "\n\n" + steps;
 }
 
-function likeRecpie(id) {
+function likeRecpie(id) { // "favourite" recipe
     let liked = localStorage.getItem("liked");
 
     if (liked) {

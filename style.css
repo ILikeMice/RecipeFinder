@@ -187,6 +187,8 @@ html, body {
 
     padding: 10px;
     box-sizing: border-box;
+
+    text-align: center;
 }
 
 .recipe {
@@ -248,11 +250,17 @@ html, body {
 
 .viewbtn:hover {
     background-color: #e0e0e0;
+    cursor: pointer;
 }
 
 .recipedesc {
     font-size: smaller;
     color: rgba(0, 0, 0, 0.685);
+}
+
+.recipetxt:hover {
+    cursor: pointer;
+    background-color: #e0e0e0;
 }
 
 .recipetitle {
