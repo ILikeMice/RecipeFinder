@@ -83,7 +83,7 @@ async function findRecipes() { // Main recipe search function
     }
     console.log(ingredients);
 
-    let url = "https://api.spoonacular.com/recipes/complexSearch?includeIngredients=" + ingredients.join(",") + "&number=5&apiKey=367f065fb39d414ebfedb65c1074c83b&addRecipeInformation=true&fillIngredients=true&addRecipeInstructions=true";
+    let url = "https://api.spoonacular.com/recipes/complexSearch?includeIngredients=" + ingredients.join(",") + "&number=15&apiKey=367f065fb39d414ebfedb65c1074c83b&addRecipeInformation=true&fillIngredients=true&addRecipeInstructions=true";
 
     try {
         const response = await fetch(url);
